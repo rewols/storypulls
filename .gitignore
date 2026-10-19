@@ -1,0 +1,15 @@
+.env
+cookies/
+*.txt.cookies
+
+# worker
+worker/.venv/
+worker/data/
+__pycache__/
+.pytest_cache/
+
+# web
+web/node_modules/
+web/.next/
+web/next-env.d.ts
+web/*.tsbuildinfo

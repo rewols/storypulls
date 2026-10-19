@@ -1,0 +1,9 @@
+anthropic==1.15.0
+fastapi==0.146.0
+faster-whisper==1.2.1
+httpx==0.28.1
+pydantic==2.14.1
+python-multipart==0.0.32
+uvicorn[standard]==0.54.0
+# Platforms change often; bump this first when a fetcher breaks.
+yt-dlp==2026.8.19

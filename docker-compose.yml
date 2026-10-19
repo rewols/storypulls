@@ -1,0 +1,25 @@
+services:
+  worker:
+    build: ./worker
+    env_file: .env
+    volumes:
+      - worker-data:/data
+      - ./cookies:/cookies:ro
+    # Not published: only the web app talks to the worker.
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  web:
+    build: ./web
+    env_file: .env
+    environment:
+      WORKER_URL: http://worker:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - worker
+    restart: unless-stopped
+
+volumes:
+  worker-data:
